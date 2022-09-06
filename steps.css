@@ -1,6 +1,6 @@
 body {
     background: #ffffff;
-    border: 1px solid #dadada;
+    /*border: 1px solid #dadada;*/
     border-bottom: none;
     border-top: none;
     font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -10,7 +10,6 @@ body {
     height: 45px;
     width: 100%;
     background: #0b192c;
-    margin: 0 -1px;
 }
 
 .data .container,
