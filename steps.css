@@ -6,6 +6,12 @@ body {
     font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
+.header {
+    height: 45px;
+    width: 100%;
+    background: #0b192c;
+}
+
 .data .container,
 .steps .container {
     padding: 0 16px;
@@ -107,7 +113,8 @@ body {
     width: 200%;
     right: -50%;
 }
-.steps__item.last-active::before {
+.steps__item.last-active::before,
+.steps__item.prev-active::before {
     background: #09a122;
     right: -149%;
 }
@@ -223,7 +230,7 @@ body {
 .data-form__item-input {
     display: block;
     width: 100%;
-    padding: 14px 10px;
+    padding: 14px 40px 14px 10px;
     background: #eff4f9;
     border: 1px solid #1785ed;
     border-radius: 2px;

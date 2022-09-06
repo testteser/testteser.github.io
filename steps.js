@@ -57,6 +57,10 @@ $(function () {
 
         if (!getInvalidInputs().length) {
             submitButton.toggleClass('active')
+
+            setTimeout(function () {
+                window.location = 'second.html'
+            }, 2000)
         } else {
             getInvalidInputs().each(function (index, item) {
                 $(item).closest('.data-form__item').addClass('error-field')
