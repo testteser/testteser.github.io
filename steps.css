@@ -6,19 +6,43 @@ body {
     font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
-.data .container {
-    padding: 0 15px;
+.data .container,
+.steps .container {
+    padding: 0 16px;
+    margin: 0 auto;
 }
 
 /* Top info steps */
 
 .steps {
+    background: #f5f5f5;
+    border-bottom: 1px solid #dadada;
+}
+
+.steps__wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: hidden;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.steps__item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.steps__item-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
     background: #f5f5f5;
-    margin: 0 -1px;
-    padding: 10px 10px 15px;
 }
 
 .steps__icon {
@@ -51,11 +75,24 @@ body {
     align-items: center;
     flex-direction: column;
 }
+.steps__item:first-child {
+    align-items: flex-start;
+}
+.steps__item:last-child {
+    align-items: flex-end;
+}
+.steps__item:nth-child(2) .steps__item-content::before {
+    display: none;
+}
+.steps__item:last-child .steps__item-content::before {
+    left: auto;
+    right: 0;
+}
 .steps__item::before {
     content: '';
     position: absolute;
     top: 8px;
-    left: 50%;
+    right: 0;
     width: 100%;
     height: 2px;
 }
@@ -66,7 +103,13 @@ body {
     display: block;
 }
 .steps__item.active::before {
-    background: #09a222;
+    background: #09a122;
+    width: 200%;
+    right: -50%;
+}
+.steps__item.last-active::before {
+    background: #09a122;
+    right: -149%;
 }
 .steps__item.active .steps__icon::before {
     display: none;
@@ -78,7 +121,7 @@ body {
     display: none;
 }
 .steps__item.active .steps__icon {
-    background: #09a222;
+    background: #09a122;
 }
 .steps__item.active:not(.last-active) .steps__icon::after {
     display: none;
@@ -89,7 +132,7 @@ body {
     border: 1px dashed #aaabab;
 }
 .steps__item.last-active .steps__name {
-    color: #09a222;
+    color: #09a122;
     font-weight: 600;
 }
 
@@ -98,6 +141,7 @@ body {
 }
 
 .steps__name {
+    position: relative;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
@@ -123,11 +167,21 @@ body {
     color: #333333;
 }
 .data-form__content {
-    margin-bottom: 25px;
+    margin-bottom: 45px;
+}
+.data-form__item-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    transition: 0.1s ease;
 }
 .data-form__item {
     position: relative;
     margin-bottom: 20px;
+}
+.data-form__item--country.active .data-form__item-arrow {
+    transform: translateY(-50%) rotate(180deg);
 }
 .data-form__item.error-field .data-form__item-input {
     border-color: #de2b21;
@@ -195,6 +249,7 @@ body {
 }
 .data-form__item-input:focus {
     background: #ffffff;
+    outline: 2px solid #96c7f8;
 }
 .data-form__item-select {
     display: block;

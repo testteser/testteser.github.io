@@ -400,6 +400,8 @@ button {
     touch-action: manipulation;
 }
 
+/* Remove arrows from input number */
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -410,4 +412,16 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+/* Remove shadow from input */
+
+textarea, input[type="text"] {
+    -webkit-appearance: none;
+}
+
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
 }

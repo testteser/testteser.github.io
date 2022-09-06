@@ -11,29 +11,39 @@
 </head>
 <body>
 <div class="steps">
-    <div class="steps__item active">
+    <div class="container">
+        <div class="steps__wrapper">
+            <div class="steps__item active">
+                <div class="steps__item-content">
             <span class="steps__icon">
 
             </span>
-        <span class="steps__name">
-                Your selection
+                    <span class="steps__name">
+                Ваш номеров
             </span>
-    </div>
-    <div class="steps__item active last-active">
+                </div>
+            </div>
+            <div class="steps__item active last-active">
+                <div class="steps__item-content">
             <span class="steps__icon">
 
             </span>
-        <span class="steps__name">
+                    <span class="steps__name">
                 Ввод данных
             </span>
-    </div>
-    <div class="steps__item">
-            <span class="steps__icon">
+                </div>
+            </div>
+            <div class="steps__item">
+                <div class="steps__item-content">
+                    <span class="steps__icon">
 
-            </span>
-        <span class="steps__name">
-                Подтверждение
-            </span>
+                    </span>
+                    <span class="steps__name">
+                        Подтверждение
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="data">
@@ -92,16 +102,21 @@
                                 Пожалуйста, укажите свою фамилию
                             </span>
                     </div>
-                    <div class="data-form__item">
+                    <div class="data-form__item data-form__item--country">
                         <label class="data-form__item-label">
                             Страна
                         </label>
-                        <select class="data-form__item-select" id="country-select">
-                            <option disabled>Выберите страну:</option>
-                            <option value="ru">Россия</option>
-                            <option selected value="ua">Украина</option>
-                            <option value="usa">Соединенные Штаты Америки</option>
-                        </select>
+                        <div class="data-form__item-field">
+                            <select class="data-form__item-select" id="country-select">
+                                <option disabled>Выберите страну:</option>
+                                <option value="ru">Россия</option>
+                                <option selected value="ua">Украина</option>
+                                <option value="usa">Соединенные Штаты Америки</option>
+                            </select>
+                            <svg class="data-form__item-arrow" width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.74641 0.720226L6.47759 5.55596L11.2349 0.720226C11.8622 0.0667478 12.934 1.13845 12.2805 1.79193L6.92196 7.30728C6.6867 7.54254 6.29462 7.54254 6.0855 7.30728L0.674706 1.79193C0.0473675 1.13845 1.11907 0.0667478 1.74641 0.720226Z" fill="#333333"/>
+                            </svg>
+                        </div>
                     </div>
                     <div class="data-form__item">
                         <label class="data-form__item-label">
