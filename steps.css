@@ -10,6 +10,7 @@ body {
     height: 45px;
     width: 100%;
     background: #0b192c;
+    margin: 0 -1px;
 }
 
 .data .container,
