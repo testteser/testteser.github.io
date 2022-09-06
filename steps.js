@@ -1,7 +1,35 @@
 $(function () {
     const submitButton = $('#main-form-button'),
-          mainForm = $('#main-form'),
-          mainFormInputs = $('.data-form__item-input')
+        mainForm = $('#main-form'),
+        mainFormInputs = $('.data-form__item-input'),
+        countrySelect = $('#country-select'),
+        numberCodeSelect = $('#number-code-select')
+
+    countrySelect.on('change', function (e) {
+        e.preventDefault()
+
+        $('.data-form__number-label').text(`+${numberCodeSelect.find(`option[value="${$(this).val()}"]`).data('code')}`)
+        $('.data-form__flag').attr('src', `${$(this).val()}.png`)
+    })
+
+    $('.data-form__item-field--select').on('click', function () {
+        $(this).addClass('active')
+
+        console.log('!!!!!!!!')
+    })
+
+    $(window).on('click', function (e) {
+        if (!e.target.closest('.data-form__item-field--select')) {
+
+        }
+    })
+
+    numberCodeSelect.on('change', function () {
+        $('.data-form__number-label').text(`+${$(this).find('option:selected').data('code')}`)
+        $('.data-form__flag').attr('src', `${$(this).val()}.png`)
+
+        $(this).parent().removeClass('active')
+    })
 
     mainFormInputs.each(function (index, item) {
         $(item).on('input', function () {
