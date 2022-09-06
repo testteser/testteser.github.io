@@ -211,6 +211,12 @@ body {
     color: #de2b21;
 }
 
+.data-form__decorate.ok {
+    padding: 2px;
+    border: 1px solid #96c7f8;
+    border-radius: 4px;
+}
+
 .data-form__submit {
     position: relative;
     width: 100%;

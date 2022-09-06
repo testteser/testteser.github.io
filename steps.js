@@ -14,9 +14,14 @@ $(function () {
             }
         })
 
+        $(item).on('focus', function () {
+            $(item).closest('.data-form__decorate').addClass('ok')
+        })
+
         $(item).on('blur', function () {
+            $(item).closest('.data-form__decorate').removeClass('ok')
+
             if ($(this).val().length <= 0) {
-                $(this).closest('.data-form__item').removeClass('success-field')
                 $(this).closest('.data-form__item').addClass('error-field')
             }
         })
