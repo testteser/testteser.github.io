@@ -22,7 +22,9 @@ $(function () {
         $(this).addClass('active')
     })
 
-    numberCodeSelect.on('change', function () {
+    numberCodeSelect.on('change', function (e) {
+        e.preventDefault()
+
         $('.data-form__number-label').text(`+${$(this).find('option:selected').data('code')}`)
         $('.data-form__flag').attr('src', `${$(this).val()}.png`)
 
@@ -34,12 +36,12 @@ $(function () {
             $(item).closest('.data-form__item').removeClass('error-field')
         })
 
-        // $(item).on('focus', function () {
-        //     $(item).closest('.data-form__decorate').addClass('ok')
-        // })
+        $(item).on('focus', function () {
+            $(item).closest('.data-form__focus').addClass('active')
+        })
 
         $(item).on('blur', function () {
-            $(item).closest('.data-form__decorate').removeClass('ok')
+            $(item).closest('.data-form__focus').removeClass('active')
 
             if ($(this).val().length <= 0) {
                 $(this).closest('.data-form__item').find('.error-icon').css('visibility', 'visible')
@@ -85,8 +87,21 @@ $(function () {
     }
 
     $(window).on('load', function () {
+        submitButton.removeClass('active')
+
         getValidInputs().each(function (index, item) {
             $(item).closest('.data-form__item').addClass('success-field')
         })
     })
+
+    function isiOS() { return navigator.userAgent.match(/ipad|ipod|iphone/i); }
+
+    if (isiOS()){
+        var ins = [], _ins = document.querySelectorAll("input")
+        for(var i = 0; i <ins.length; i++) ins.push(_ins[i])
+        document.body.addEventListener('touchstart', event => {
+            if(ins.filter(i => i.contains(event.target)).length == 0)
+                document.activeElement.blur()
+        });
+    }
 })

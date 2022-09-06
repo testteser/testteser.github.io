@@ -235,6 +235,19 @@ body {
     border: 1px solid #1785ed;
     border-radius: 2px;
     transition: 0.1s ease;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
+.data-form__focus {
+    padding: 1px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    margin: 0 -1px;
+}
+.data-form__focus.active {
+    border-color: #96c7f8;
 }
 .data-form__item-input.error {
     border-color: #de2b21;
@@ -254,10 +267,6 @@ body {
     line-height: 19px;
     color: #767676;
 }
-.data-form__item-input:focus {
-    background: #ffffff;
-    outline: 2px solid #96c7f8;
-}
 .data-form__item-select {
     display: block;
     width: 100%;
@@ -265,6 +274,11 @@ body {
     background: #eff4f9;
     border: 1px solid #1785ed;
     border-radius: 2px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
 }
 
 .data-form__item-select--code {

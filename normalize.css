@@ -416,8 +416,23 @@ input[type=number] {
 
 /* Remove shadow from input */
 
+input {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 textarea, input[type="text"] {
     -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+}
+
+textarea:focus, input[type="text"]:focus {
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 select {
