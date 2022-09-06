@@ -83,4 +83,10 @@ $(function () {
             }
         })
     }
+
+    $(window).on('load', function () {
+        getValidInputs().each(function (index, item) {
+            $(item).closest('.data-form__item').addClass('success-field')
+        })
+    })
 })
