@@ -392,10 +392,11 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.data-form__item-row .data-form__item-field:first-child {
+
+.row__item:first-child {
     width: 29%;
 }
-.data-form__item-row .data-form__item-field {
+.row__item:last-child {
     width: 68%;
 }
 
